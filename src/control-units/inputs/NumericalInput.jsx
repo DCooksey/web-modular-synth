@@ -8,12 +8,19 @@ const styles = theme => ({
     },
     input: {
         width: 42,
+        color: "#7fffd4"
     },
 });
 
 const NumericalInput = ({ classes, handleInputChange, value }) => (
     <React.Fragment>
-        <Input onChange={handleInputChange} value={value} />
+        <Input 
+            onChange={handleInputChange} 
+            value={value} 
+            InputProps={{
+                classes: classes.input
+            }}
+        />
     </React.Fragment>
 );
 
