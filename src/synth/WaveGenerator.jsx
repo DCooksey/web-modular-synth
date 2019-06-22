@@ -36,16 +36,12 @@ const WaveGenerator = ({ classes, audioCtx }) => {
     }, [generate, osc, waveType])
 
     const handleButtonClick = () => {
-        if (generate === btnState.UNTOUCHED) {
-            setGenerate(btnState.ACTIVE);
-        }    
-        else if (generate === btnState.ACTIVE) {
-            osc.stop();
-            setGenerate(btnState.INACTIVE);
-        }
-        else if (generate === btnState.INACTIVE) {
+        if (generate === btnState.UNTOUCHED || generate === btnState.INACTIVE) {
             setGenerate(btnState.ACTIVE);
             setOsc(new Oscillator(waveType, freq, audioCtx));
+        } else if (generate === btnState.ACTIVE) {
+            osc.stop();
+            setGenerate(btnState.INACTIVE);
         }
     };
 
