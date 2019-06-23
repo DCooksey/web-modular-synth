@@ -5,15 +5,13 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
     button: {
-        //   color: "white",
-        //   backgroundColor: "black"
-        background: 'linear-gradient(45deg, #150c0e 30%, #213765 90%)',
+        background: "#ac58c7",
         borderRadius: 3,
         border: 1,
         color: 'white',
-        height: 48,
-        padding: '0 30px'
-    },
+        height: 24,
+        padding: '0 30px',
+    }
 });
 
 const SquareButton = ({ classes, purpose, buttonText = "" }) => (
@@ -27,4 +25,5 @@ const SquareButton = ({ classes, purpose, buttonText = "" }) => (
 );
 
 SquareButton.propTypes = { purpose: PropTypes.func, buttonText: PropTypes.string };
+
 export default withStyles(styles)(SquareButton);
